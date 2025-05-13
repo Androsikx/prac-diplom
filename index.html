@@ -9,38 +9,77 @@
 <body>
   <header>
     <div class="logo-container">
-      <img src="img/logo.png" alt="Логотип" class="logo-img">
+      <img src="logo.png" alt="Логотип" class="logo-img">
       <div class="logo-text">Вольт-Альянс</div>
     </div>
     <nav>
-      <a href="index.html">Головна</a>
+      <a href="index.html" class="active">Головна</a>
       <a href="about.html">Про нас</a>
       <a href="services.html">Послуги</a>
       <a href="contacts.html">Контакти</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     </nav>
   </header>
 
   <main>
-    <section class="news-slider">
+    <section class="news-section">
+      <input type="radio" name="slider" id="news1" checked>
+      <input type="radio" name="slider" id="news2">
+      <input type="radio" name="slider" id="news3">
+
       <div class="slides">
-        <div class="slide">
-          <h2>🔧 Запуск нової лінії</h2>
+        <div class="news-slide first">
+          <h3>🔧 Запуск нової лінії</h3>
           <p>Ми відкрили новий сервіс у Києві. Працюємо щодня!</p>
         </div>
-        <div class="slide">
-          <h2>🤝 Партнерство з ЕнергоСтар</h2>
+        <div class="news-slide">
+          <h3>🤝 Партнерство з ЕнергоСтар</h3>
           <p>Співпрацюємо з провідними інноваційними компаніями.</p>
         </div>
-        <div class="slide">
-          <h2>💡 Грант на розвиток</h2>
+        <div class="news-slide">
+          <h3>💡 Грант на розвиток</h3>
           <p>Отримали фінансування на впровадження зелених технологій.</p>
         </div>
       </div>
+
+      <div class="news-nav">
+        <label for="news1"></label>
+        <label for="news2"></label>
+        <label for="news3"></label>
+      </div>
+    </section>
+
+    <section class="contacts-box">
+      <h1>Контакти</h1>
+      <p><strong>Адреса:</strong> вул. Енергетична, 12, Київ</p>
+      <p><strong>Телефон:</strong> +380 44 123 45 67</p>
+      <p><strong>Email:</strong> info@volt-alliance.ua</p>
+      <p><strong>Графік:</strong> Пн-Пт 09:00–18:00</p>
+
+      <form class="contact-form" action="mailto:info@volt-alliance.ua" method="post" enctype="text/plain">
+        <h2>Напишіть нам</h2>
+        <label for="name">Ваше ім’я:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Надіслати</button>
+      </form>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Вольт-Альянс. Всі права захищені.</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 </body>
 </html>
