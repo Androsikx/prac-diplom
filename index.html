@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <button id="theme-toggle" title="Перемкнути тему">🌓</button>
   <aside>
     <img src="logo.png" class="logo-img" alt="Логотип компанії Вольт-Альянс">
     <div class="name">Вольт-Альянс</div>
@@ -16,20 +17,27 @@
       <a href="#" title="Email"><span>📧</span></a>
     </div>
     <nav aria-label="Основна навігація">
-      <ul>
-        <li><a href="#home">Головна</a></li>
-        <li><a href="#main-content">Про нас</a></li>
-        <li><a href="#info-block">Послуги</a></li>
-        <li><a href="#info-contact">Контакти</a></li>
-        <li><a href="#form">Зв'язатись з нами</a></li>
+  <ul class="main-menu">
+    <li><a href="#home">Головна</a></li>
+    <li><a href="#main-contect">Про нас</a></li>
+    <li class="has-submenu">
+      <a href="#info-block" onclick="toggleSubmenu(event); return false;">Послуги</a>
+      <ul class="submenu">
+        <li><a href="#">Прибирання офісів</a></li>
+        <li><a href="#">Миття вікон</a></li>
+        <li><a href="#">Хімчистка меблів</a></li>
       </ul>
-    </nav>
+    </li>
+    <li><a href="#info-contact">Контакти</a></li>
+    <li><a href="#form">Зв’язатись з нами</a></li>
+  </ul>
+</nav>
   </aside>
 
   <main>
     <script src="scroll-top.js"></script>
     <!-- Головна -->
-    <section id="home">
+    <section id="home" >
       <div class="title">Вольт-Альянс</div>
 
       <input type="radio" name="news" id="news1" checked hidden>
@@ -60,7 +68,7 @@
       </div>
     </section>
     <!-- Про нас -->
-    <section id="main-content">
+    <section id="main-content" class="fade-in-section">
       <div class="main-content">
          <h2 class="section-title green">Про Нас</h2>
         <p>Ласкаво просимо до "Вольт-Альянс"!</p>
@@ -85,7 +93,7 @@
     </section>
 
     <!-- Послуги -->
-    <section id="info-block">
+    <section id="info-block" class="fade-in-section">
       <div class="info-block">
         <h2 class="section-title green">🔧 Наші послуги</h2>
         <p>Ми пропонуємо широкий спектр послуг у сфері електротехнічного забезпечення. Наша мета — забезпечити кожного клієнта якісними товарами та професійною підтримкою.</p>
@@ -103,7 +111,7 @@
     </section>
 
     <!-- Контакти -->
-    <section id="info-contact">
+    <section id="info-contact" class="fade-in-section">>
       <div class="info-block">
         <h2 class="section-title green">📞 Контактна інформація</h2>
         <p><strong>Зв’яжіться з нами будь-яким зручним способом:</strong></p>
@@ -118,7 +126,7 @@
     </section>
 
     <!-- Зв'язок -->
-    <section id="form" class="contact-card">
+    <section id="form" class="contact-card fade-in-section">
       <h2>Напишіть нам</h2>
       <form onsubmit="return sendMessage();">
         <label for="name">Ваше ім’я:</label>
